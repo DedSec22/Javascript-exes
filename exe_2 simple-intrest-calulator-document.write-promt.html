@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function simpleIntrestMultiplication(rate, amount, year){
+            var simpleIntrest = (rate * amount *year / 100);
+            return simpleIntrest;
+        }
+
+        var amount = "Enter Your amount";
+        var amount = prompt(amount);
+        var amount = parseInt(amount);
+
+        var year = "Enter years";
+        var year = prompt(year);
+        var year = parseInt(year);
+
+        var rate = "Enter rate";
+        var rate = prompt(rate);
+        var rate = parseInt(rate);
+
+        var totalIntrest = simpleIntrestMultiplication(rate, amount, year);
+        document.write("Your simple intrest of given values is : ", totalIntrest);
+
+    </script>
+</body>
+</html>

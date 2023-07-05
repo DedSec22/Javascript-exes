@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html" onsubmit="return HoursAndMinutes()">
+        <table border="2" align="center" width="50%" cellpadding="10">
+            <tr>
+                <td>
+                    Enter Minutes
+                </td>
+                <td>
+                    <input type="number" id="minutes" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Calculate Simple Intrest" id="submit">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    Your Converted hours is :<span id="output1"></span>
+                </td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center">
+                and Remaining minutes is :<span id="output2"></span>
+            </td>
+        </tr>
+        </table>
+    </form>
+
+    <script>
+
+        function HoursAndMinutes(){
+            let minutes = parseInt(document.getElementById("minutes").value);
+            let hours = Math.floor(minutes / 100);
+            let remainingMinutes = (minutes%60);
+            document.getElementById("output1").innerHTML = hours;
+            document.getElementById("output2").innerHTML = remainingMinutes;
+            return false;
+        }
+
+    </script>
+</body>
+</html>

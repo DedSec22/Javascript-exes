@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+
+  <script>
+    //user defined function (UDF)
+    //with return value with argument function
+    function minutesintohours(minutes)
+    {
+      var hours = parseInt(minutes/60);
+      return [hours];
+    }
+    function remainingminute (minutes){
+      var remainingminutes = (minutes%60);
+      return[remainingminutes];
+    }
+
+    var message = "Enter Minutes";
+    var minutes = prompt(message);
+    var minutes = parseInt(minutes);
+    var mih = minutesintohours(minutes);
+    var rm = remainingminute(minutes);
+    document.write("your hours is = ", mih, "<br/>and remaining minutes is = ", rm);
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <input type="number" id="bytes" placeholder="bytes"> <br>
+    <input type="number" id="kilobytes" placeholder="kilobytes"> <br>
+    <input type="number" id="megabytes" placeholder="megabytes"> <br>
+    <input type="number" id="gigabytes" placeholder="gigabytes"> <br>
+    <button type="button" id="one" onclick="one();">into Killobytes</button><br>
+    <button type="button" id="two" onclick="two();">into Megabytes</button><br>
+    <button type="button" id="three" onclick="three();">into Gigabytes</button><br>
+    <button type="button" id="reset" onclick="resetFeilds();">Reset</button>
+    <div id="output"></div>
+
+    <script>
+
+        class KB
+        {
+            constructor(bytes){
+                this.bytes = bytes;
+                console.log("KB class constructor loaded");
+            }
+            getKB(){
+                let temp = this.bytes / 1024;
+                return temp;
+            }
+        }
+
+        class MB extends KB
+        {
+            constructor(kilobytes)
+            {
+                super(bytes); //calling parent class constructor
+                console.log('MB class constructor loaded');
+            }
+            getMB()
+            {
+                let temp = kilobytes / 1024;
+                return temp;
+            }
+        }
+
+        class GB extends MB
+        {
+            constructor(megabytes)
+            {
+                super(bytes);
+                console.log('GB class constructor loaded');
+            }
+            getGB()
+            {
+                let temp = megabytes / 1024;
+                return temp;
+            }
+        }
+
+        var bytes = document.getElementById("bytes").value;
+        var kilobytes = document.getElementById("kilobytes").value;
+        var megabytes = document.getElementById("megabytes").value;
+        var gigabytes = document.getElementById("gigabytes").value;
+
+        var kb1 = new KB(bytes);
+        var mb1 = new MB(kilobytes);
+        var gb1 = new GB(gigabytes);
+
+        function one(){
+                var kilobytes = kb1.getKB();
+                document.getElementById("output").innerHTML = "bytes into kilobytes is " +kilobytes.toFixed(2) + " kb";
+                console.log(kilobytes);
+        }
+
+        function two(){
+                var megabytes = mb1.getMB();
+                document.getElementById("output").innerHTML = "kilobytes into megabytes is " +megabytes.toFixed(2) + "mb";
+                console.log(megabytes);
+        }
+
+        function three(){
+                var gigabytes = gb1.getGB();
+                document.getElementById("output").innerHTML = "mega bytes into gigabytes is " + gigabytes.toFixed(2) + "gb";
+                console.log(gigabytes);
+        }
+
+        function resetFeilds(){
+            document.getElementById("bytes").value = "";
+            document.getElementById("kilobytes").value = "";
+            document.getElementById("megabytes").value = "";
+            document.getElementById("gigabytes").value = "";
+            document.getElementById("output").innerHTML = "";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

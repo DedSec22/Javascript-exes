@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="output1"></div>
+    <script>
+        class shape
+        {
+            pi = 3.14;
+            getSquarenumber(number){
+                let temp = number * number;
+                return temp;
+            }
+        }
+
+        class circle extends shape
+        {
+            constructor(radius)
+            {
+                super();
+                this.radius = radius;
+            }
+            getArea()
+            {
+                let temp = this.pi * super.getSquarenumber(this.radius);
+                return temp;
+            }
+        }
+
+        class sphere extends circle
+        {
+            constructor(radius)
+            {
+                super(radius);
+            }
+            //method overriding = hybrid inheritance
+            getArea()
+            {
+                let temp = 4 * super.getArea();
+                return temp;
+            }
+        }
+        
+        class cyliender extends shape
+        {
+            constructor(radius, height)
+            {
+                super();
+                this.radius = radius;
+                this.height = height;
+            }
+            getArea()
+            {
+                let temp = 2*(this.pi*radius*height) + 2 * super.getSquarenumber(this.radius);
+                return temp;
+            }
+        }
+
+        var radius = parseInt(prompt("Enter your radius for Circle Area"));
+        var c1 = new circle(radius);
+        var area = c1.getArea();
+        console.log("circle area ", area);
+
+        var radius = parseInt(prompt("Enter your radius for Cyliender Area"));
+        var height = parseInt(prompt("enter your height for Cyliender Area"));
+        var c2 = new cyliender(radius, height);
+        area = c2.getArea();
+        console.log("cyliender area", area);
+
+        var sp1 = new sphere(radius);
+        area = sp1.getArea();
+        console.log("Sphere area", area);
+
+
+</script>
+</body>
+</html>

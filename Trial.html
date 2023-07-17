@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="dropdown" id="drop">
+        <label class="dropdown__label" id="dropdown__label" for="project">Projekt wählen</label>
+        <select name="project" id="project" class="dropdown__init" style="opacity: 0; width: 0px; padding: 0px; height: 0px;">
+            <option data-display="Select">All</option>
+            <option value="project-1">Project 1</option>
+            <option value="project-2">Project 2</option>
+            <option value="project-3">Project 3</option>
+            <option value="project-4">Project 4</option>
+            <option value="project-5">Project 5</option>
+            <option value="project-6">Project 6</option>
+            <option value="project-7">Project 7</option>
+            <option value="project-8">Project 8</option>
+            <option value="project-9">Project 9</option>
+            <option value="project-10">Project 10</option>
+        </select>
+        <div class="nice-select dropdown__init" tabindex="0" style="z-index: 1111;">
+            <span id="current"></span>
+            <div class="nice-select-dropdown">
+                <ul class="list" >
+                    <li data-value="All" class="option null">All</li>
+                    <li data-value="project-1" class="option null">Project 1</li>
+                    <li data-value="project-2" class="option null">Project 2</li>
+                    <li data-value="project-3" class="option null">Project 3</li>
+                    <li data-value="project-4" class="option null">Project 4</li>
+                    <li data-value="project-5" class="option null">Project 5</li>
+                    <li data-value="project-6" class="option null">Project 6</li>
+                    <li data-value="project-7" class="option null">Project 7</li>
+                    <li data-value="project-8" class="option null">Project 8</li>
+                    <li data-value="project-9" class="option null">Project 9</li>
+                    <li data-value="project-10" class="option null">Project 10</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-none">
+    <div class="tab-module">
+        <div class="tab-module__nav">
+            <div class="tab-module__nav-left">
+                <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1" class="tab-module__nav-link : title-h3">
+                    News
+                </button>
+                <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1" class="tab-module__nav-link : title-h3">
+                    Veranstaltungen
+                </button>
+            </div>
+            <div class="tab-module__nav-right"></div>
+        </div>
+    
+        <div id="tabpanel-1" role="tabpanel">
+            <div class="news-card-list">
+                <div class="news-card-list__inner">
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>Das ÖSZ wünscht frohe Weihnachten!</h4>
+                            <p>
+                                Das gesamte Team des ÖSZ wünscht Ihnen frohe Weihnachten, erholsame
+                                Feiertage und viel Gesundheit im neuen Jahr!
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--with-image">
+                        <div class="news-card__content">
+                            <h4>Das ÖSZ-Praxisheft 41 ist da!</h4>
+                            <p>Das Praxisheft „Linguistische Kompetenzen in Französisch, …</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="news-card__image : overflow-h">
+                            <img src="public/img/news-card-image-01.jpg" alt="Image" width="164" height="164">
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>
+                                Miteinander, FAIRnetzt und digital Deutsch lernen in der Primarstufe
+                            </h4>
+                            <p>„#Deutsch FAIRnetzt“ kurz und informativ erklärt!</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>Trio-Sonderzeitschrift Hallo Österreich</h4>
+                            <p>
+                                Die dreisprachige Sonderzeitschrift „Trio - Hallo Österreich“ für die 2.
+                                bis 6. Schulstufe ist soeben zum 9. Mal erschienen.
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--with-image">
+                        <div class="news-card__content">
+                            <h4>Das ÖSZ-Praxisheft 41 ist da!</h4>
+                            <p>Das Praxisheft „Linguistische Kompetenzen in Französisch, …</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="news-card__image : overflow-h">
+                            <img src="public/img/news-card-image-02.jpg" alt="Image" width="164" height="164">
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>
+                                Miteinander, FAIRnetzt und digital Deutsch lernen in der Primarstufe
+                            </h4>
+                            <p>„#Deutsch FAIRnetzt“ kurz und informativ erklärt!</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>Das ÖSZ wünscht frohe Weihnachten!</h4>
+                            <p>
+                                Das gesamte Team des ÖSZ wünscht Ihnen frohe Weihnachten, erholsame
+                                Feiertage und viel Gesundheit im neuen Jahr!
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--with-image">
+                        <div class="news-card__content">
+                            <h4>Das ÖSZ-Praxisheft 41 ist da!</h4>
+                            <p>Das Praxisheft „Linguistische Kompetenzen in Französisch, …</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="news-card__image : overflow-h">
+                            <img src="public/img/news-card-image-03.jpg" alt="Image" width="164" height="164">
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>
+                                Miteinander, FAIRnetzt und digital Deutsch lernen in der Primarstufe
+                            </h4>
+                            <p>„#Deutsch FAIRnetzt“ kurz und informativ erklärt!</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>Trio-Sonderzeitschrift Hallo Österreich</h4>
+                            <p>
+                                Die dreisprachige Sonderzeitschrift „Trio - Hallo Österreich“ für die 2.
+                                bis 6. Schulstufe ist soeben zum 9. Mal erschienen.
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--with-image">
+                        <div class="news-card__content">
+                            <h4>Das ÖSZ-Praxisheft 41 ist da!</h4>
+                            <p>Das Praxisheft „Linguistische Kompetenzen in Französisch, …</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="news-card__image : overflow-h">
+                            <img src="public/img/news-card-image-01.jpg" alt="Image" width="164" height="164">
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card">
+                        <div class="news-card__content">
+                            <h4>
+                                Miteinander, FAIRnetzt und digital Deutsch lernen in der Primarstufe
+                            </h4>
+                            <p>„#Deutsch FAIRnetzt“ kurz und informativ erklärt!</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="news-card-list__footer : text-center">
+                    <a href="#" class="btn">Mehr laden</a>
+                </div>
+            </div>
+        </div>
+        <div id="tabpanel-2" role="tabpanel" class="is-hidden">
+            <div class="news-card-list">
+                <div class="news-card-list__inner">
+                    <a href="#" class="news-card : news-card--with-tag">
+                        <div class="news-card__content">
+                            <div class="news-card__tag">ÖSZ-Veranstaltung</div>
+                            <h4>Minimesse des Sprachförderzentrums der Bildungsdirektion Wien</h4>
+                            <div class="news-card__date">22. Februar 2023, 1040 Wien</div>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed …</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--secondary">
+                        <div class="news-card__content">
+                            <h4>Das ist eine weitere Veranstaltung</h4>
+                            <div class="news-card__date">14. März 2023, 8010 Graz</div>
+                            <p>
+                                Das ist der Event-Teasertext. Er kann auch mehrzeilig sein, sollte aber
+                                möglichst Prägnant sein und ist auf maximal 150 Zeichen in dieser
+                                Ansicht beschränkt.
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--secondary">
+                        <div class="news-card__content">
+                            <h4>Minimesse des Sprachförderzentrums der Bildungsdirektion Wien</h4>
+                            <div class="news-card__date">30. März 2023, 8750 Judenburg</div>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed …</p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--with-tag">
+                        <div class="news-card__content">
+                            <div class="news-card__tag">ÖSZ-Veranstaltung</div>
+                            <h4>Das ist eine weitere Veranstaltung</h4>
+                            <div class="news-card__date">08. April 2023, 1010 Wien</div>
+                            <p>
+                                Das ist der Event-Teasertext. Er kann auch mehrzeilig sein, sollte aber
+                                möglichst Prägnant sein und ist auf maximal 150 Zeichen in dieser
+                                Ansicht beschränkt.
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--secondary">
+                        <div class="news-card__content">
+                            <h4>Das ist eine weitere Veranstaltung</h4>
+                            <div class="news-card__date">23. April 2023, 8010 Graz</div>
+                            <p>
+                                Das ist der Event-Teasertext. Er kann auch mehrzeilig sein, sollte aber
+                                möglichst Prägnant sein und ist auf maximal 150 Zeichen in dieser
+                                Ansicht beschränkt.
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="news-card : news-card--secondary">
+                        <div class="news-card__content">
+                            <h4>Das ist eine weitere Veranstaltung</h4>
+                            <div class="news-card__date">10. Mai 2023, 8750 Judenburg</div>
+                            <p>
+                                Das ist der Event-Teasertext. Er kann auch mehrzeilig sein, sollte aber
+                                möglichst Prägnant sein und ist auf maximal 150 Zeichen in dieser
+                                Ansicht beschränkt.
+                            </p>
+                            <div class="news-card__icon : d-flex-cc">
+                                <i class="icon : icon-arrow-right"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="news-card-list__footer : text-center">
+                    <a href="#" class="btn">Zu allen News</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var label = document.querySelector(".nice-select");
+    label.addEventListener("click", function() {
+        label.classList.toggle("open");
+    });
+
+
+    var options = document.getElementsByClassName("option");
+    // var o1 = options[i].innerHTML;
+    var current = document.getElementById("current");
+
+    var i;
+
+    for(i=0; i < options.length; i++){
+        options[i].addEventListener("click", function(){
+            this.classList.toggle("focus");
+            this.classList.toggle("selected");
+
+            // console.log(o1);
+            
+
+            
+
+            })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var dropdownmain = document.getElementById("drop");
+    // var dropdown = document.querySelector(".nice-select-dropdown");
+
+    
+        
+    
+    // dropdown.addEventListener("click", function() {
+    //     dropdownmain.classList.add("is-focused");
+    // });
+    
+    // options[0].addEventListener("click", function() {
+    //     for(var i=0; i < options.length; i++){
+    //     if(i = 1) break;
+    //     options[1].classList.add("focus");
+    //     options[1].classList.add("selected");
+    // }
+    // });
+    
+    // var options = document.getElementsByClassName("option");
+    // options[0].addEventListener("click", function() {
+    //     options[0].classList.add("focusselected");
+    //     console.log("option selected");
+    // });
+
+
+
+</script>
+</body>
+</html>

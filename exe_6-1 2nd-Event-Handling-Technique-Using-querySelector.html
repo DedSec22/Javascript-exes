@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table border="2" align="center" width="50%" cellpadding="10">
+            <tr>
+                <td>
+                    <label for="number1">Number 1:</label>
+                    <input type="text" id="number1" name="number1" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="number2">Number 2:</label>
+                    <input type="text" id="number2" name="number2" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="add" id="add" />
+                    <input type="button" value="sub" id="sub" />
+                    <input type="button" value="mul" id="mul" />
+                    <input type="button" value="div" id="div" />
+                </td>
+            </tr>
+            <tr>
+                <td id="output">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+<script>
+
+var number1 = document.getElementById("number1");
+var number2 = document.getElementById("number2");
+
+    function isValidInput(){
+        var isValid = true;
+        if (number1.value === '')
+        {
+            alert('Value cannot be empty');
+            isValid = false;
+        }
+        else
+        {
+            if(isNaN(number1.value)==true){
+                alert('Number 1 is not a valid input enter number');
+                isValid = false;
+            }
+        }
+        if(number2.value === '')
+        {
+            alert("Value cannot be empty");
+            isValid = false;
+        }
+        else
+        {
+            if(isNaN(number2.value)==true)
+            {
+                alert('Number 2 is not a valid input enter number');
+                isValid = false;
+            }
+        }
+        return isValid;
+    }
+
+    function calculation(){
+        let ButtonId = this.id;
+        if (isValidInput() == true)
+        {
+            let num1 = parseInt(number1.value);
+            let num2 = parseInt(number2.value);
+            let output = document.getElementById('output');
+            if (ButtonId === "add")
+            {
+                output.innerHTML  = num1+num2;
+            }
+            else if (ButtonId === "sub")
+            {
+                output.innerHTML =  num1 - num2;
+            }
+            else if (ButtonId === "mul")
+            {
+                output.innerHTML = num1*num2;
+            }
+            else if (ButtonId === "div")
+            {
+                output.innerHTML = (num1/num2).toFixed(2);
+            }
+        }
+    }
+    var add = document.querySelector('#add');
+    var sub = document.querySelector('#sub');
+    var mul = document.querySelector('#mul');
+    var div = document.querySelector('#div');
+
+    add.onclick = calculation;
+    sub.onclick = calculation;
+    mul.onclick = calculation;
+    div.onclick = calculation;
+
+    
+</script>    
+</body>
+</html>

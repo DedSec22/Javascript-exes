@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table id="output" border="1" align="center" width="50%">
+    </table>
+
+
+    <script>
+        var book = {
+            'name':'Learning Javascript',
+            'price':500,
+            'author':'ASD',
+
+            display:function(){
+                let output = document.getElementById("output");
+                output.innerHTML = `<tr><td>${this.name}</td><td>${this.price}</td><td>${this.author}</td></tr>`;
+            }
+        }
+        book.display();
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="return register();">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br><br>
+
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" required /><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required /><br><br>
+
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthdate" name="birthdate" required /><br><br>
+
+        <input type="submit" value="submit">
+
+    </form>
+
+    <script>
+        function register(){
+            let user = {}; //Empty object
+            user["email"] = document.getElementById("email").value;
+            user["mobile"] = document.getElementById("mobile").value;
+            user["password"] = document.getElementById("password").value;
+            user["birthdate"] = document.getElementById("birthdate").value;
+            
+            console.log(user);
+
+            return false;
+        }
+    </script>
+</body>
+</html>

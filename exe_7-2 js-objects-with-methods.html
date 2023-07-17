@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" />
+</head>
+
+<body>
+    <table width="90%" align="center" cellpadding="10" border="2">
+        <tr>
+            <td width="25%" valign="top">
+                <form action="" id="myForm">
+                    <table border="2" width="100%" cellpadding="10">
+                        <tr>
+                            <td align="center">
+                                <h1>Add Student</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="fullname" novalidate />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="email" id="email" novalidate />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Select Gender</b></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="male">
+                                    <input type="radio" name="gender" id="male" value="male" novalidate />male
+                                </label>
+                                <br>
+                                <label for="female">
+                                    <input type="radio" name="gender" id="female" value="female" novalidate />female
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <button type="submit" id="submit">Add Student</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+            <td width="75%" valign="top">
+                <table id="mytable" border="1" align="center" cellpadding="10" width="100%">
+                    <thead>
+                        <tr>
+                            <td>SrNo</td>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>Gender</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        //plugin activator code
+        let table = new DataTable('#myTable'); 
+
+        //Defining variables to store values from their ids
+        var output = document.getElementById('output');
+        var submit = document.getElementById('submit');
+        var fullname = document.getElementById('fullname');
+        var email = document.getElementById('email');
+        //defined activerow and passed value to it
+        var activerow = null;
+        //defining srno to start a sequence of srno
+        var srno = 1;
+        
+        //created function to male variables of object
+        submit.onclick = function () {
+            //defined variable s1 of object student
+            var s1 = student;
+            //passed values of variables into objects variable
+            s1.name = fullname.value;
+            s1.email = email.value;
+            s1.gender = document.querySelector("input[name='gender']:checked").value;
+            //calling objects method
+            s1.add();
+            //to stop the form submission on new page
+            return false;
+        }
+
+        //creating object
+        var student = new Object({
+            name: '',
+            email: '',
+            gender: true,
+            //creating method
+            add: function () {
+
+                //you have to destroy and recreate table that is dynamically generated just for the datatable Plugin
+                $('#mytable').DataTable().destroy();
+
+                if (submit.innerHTML === "Add Student") {
+                    let row = `<tr><td>${srno}</td><td>${this.name}</td><td>${this.email}</td><td>${this.gender}</td>
+                    <td><button class="btnedit">Edit</td><td><button class="btndelete">Delete</td></tr>`;
+                    output.innerHTML += row;
+                    
+                    //emptying the inputfields after submission
+                    fullname.value = "";
+                    email.value = "";
+                    document.getElementById("male").checked = false;
+                    document.getElementById("female").checked = false;
+
+                    //Creating dltbtn variable to store the values of dynamically generated dltbtn
+                    let btndelete = document.getElementsByClassName("btndelete");
+                    //getting lenght for srno
+                    let length = btndelete.length;
+
+                    for (let index = 0; index < length; index++) {
+                        btndelete[index].onclick = function () {
+                            //using this.parentnode to access the parent node(this.(td<tr<tbody).removechild(td<tr) this will delete whole new added row)
+                            this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+                        }
+                    }
+
+                    //defiining btnedit for edit the row
+                    let btnedit = document.getElementsByClassName("btnedit");
+                    for (index = 0; index < length; index++) {
+                        //btnedit onclick property with index = srno
+                        btnedit[index].onclick = function () {
+
+                            //passing value of current row to activerow with this.parentnode 
+                            activerow = this.parentNode.parentNode;
+                            
+                            //setting values of submitted form to variables that was emptied before
+                            fullname.value = activerow.childNodes[1].innerHTML;
+                            email.value = activerow.childNodes[2].innerHTML;
+                            //changing the value of submit button
+                            submit.innerHTML = "Save Changes";
+                            //radio buttons checked passing the values from form to input type
+                            if (activerow.childNodes[3].innerHTML === "male") {
+                                document.getElementById("male").checked = true;
+                            }
+                            else {
+                                document.getElementById("female").checked = true;
+                            }
+                        }
+                        
+                    }
+                }
+                else {
+                    activerow.childNodes[1].innerHTML = fullname.value;
+                    activerow.childNodes[2].innerHTML = email.value;
+                    activerow.childNodes[3].innerHTML = this.gender;
+                    submit.innerHTML = "Add Student";
+                }
+                srno++;
+                //you have to destroy and recreate table that is dynamically generated just for the datatable Plugin
+                $('#mytable').DataTable().draw();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>area calculate with inheritance heirarchical</title>
+</head>
+<body>
+    
+
+    <script>
+        class shape
+        {
+            pi = 3.14;
+            getSquarenumber(number){
+                let temp = number * number;
+                return temp;
+            }
+        }
+
+        class circle extends shape
+        {
+            constructor(radius)
+            {
+                super();
+                this.radius = radius;
+            }
+            getArea()
+            {
+                let temp = this.pi * super.getSquarenumber(this.radius);
+                return temp;
+            }
+        }
+        
+        class cyliender extends circle
+        {
+            constructor(radius, height)
+            {
+                super();
+                this.radius = radius;
+                this.height = height;
+            }
+            getArea()
+            {
+                let temp = 2*(this.pi*radius*height) + 2*this.pi*super.getSquarenumber(this.radius);
+                return temp;
+            }
+        }
+
+        var radius = parseInt(prompt("Enter your radius for Circle Area"));
+        var c1 = new circle(radius);
+        var area = c1.getArea();
+        console.log("circle area ", area)
+
+        var radius = parseInt(prompt("Enter your radius for Cyliender Area"));
+        var height = parseInt(prompt("enter your height for Cyliender Area"));
+        var c2 = new cyliender(radius, height);
+        area = c2.getArea();
+        console.log("cyliender area", area);
+
+    </script>
+</body>
+</html>

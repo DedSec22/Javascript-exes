@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<div class="container d-none">
+<div class="container">
     <div class="tab-module">
         <div class="tab-module__nav">
             <div class="tab-module__nav-left">
@@ -223,6 +223,7 @@
         </div>
         <div id="tabpanel-2" role="tabpanel" class="is-hidden">
             <div class="news-card-list">
+
                 <div class="news-card-list__inner">
                     <a href="#" class="news-card : news-card--with-tag">
                         <div class="news-card__content">
@@ -318,80 +319,62 @@
 </div>
 
 <script>
-
+    //for accordian
     var label = document.querySelector(".nice-select");
     label.addEventListener("click", function() {
         label.classList.toggle("open");
     });
 
-
     var options = document.getElementsByClassName("option");
-    // var o1 = options[i].innerHTML;
     var current = document.getElementById("current");
-
+    var drop = document.getElementById("drop");
     var i;
 
+    function RemoveClass()
+    {
+        for(i=0; i < options.length; i++){
+            options[i].classList.remove('focus');             
+            options[i].classList.remove('selected');             
+            drop.classList.remove('is-focused');
+        }
+    }
+    
     for(i=0; i < options.length; i++){
         options[i].addEventListener("click", function(){
-            this.classList.toggle("focus");
-            this.classList.toggle("selected");
+            RemoveClass();
+            this.classList.add("focus");
+            this.classList.add("selected");
+            drop.classList.add("is-focused");
+            var selected = this.innerHTML;
+            current.innerHTML = selected;
+            });
+    }
+    
+    //for tabmodule
+    var btn1 = document.getElementById("tab-1");
+    var btn2 = document.getElementById("tab-2");
+    var tab1 = document.getElementById("tabpanel-1");
+    var tab2 = document.getElementById("tabpanel-2");
 
-            // console.log(o1);
-            
-
-            
-
-            })
+    function remover(){
+        tab1.classList.remove("is-hidden");
+        tab2.classList.remove("is-hidden");
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // var dropdownmain = document.getElementById("drop");
-    // var dropdown = document.querySelector(".nice-select-dropdown");
-
-    
-        
-    
-    // dropdown.addEventListener("click", function() {
-    //     dropdownmain.classList.add("is-focused");
-    // });
-    
-    // options[0].addEventListener("click", function() {
-    //     for(var i=0; i < options.length; i++){
-    //     if(i = 1) break;
-    //     options[1].classList.add("focus");
-    //     options[1].classList.add("selected");
-    // }
-    // });
-    
-    // var options = document.getElementsByClassName("option");
-    // options[0].addEventListener("click", function() {
-    //     options[0].classList.add("focusselected");
-    //     console.log("option selected");
-    // });
-
+    //tabmodule btn 1
+    btn1.addEventListener("click", function(){
+        remover();
+        btn1.ariaSelected = "true";
+        btn2.ariaSelected = "false";
+        tab2.classList.add("is-hidden");
+    });
+    //tabmodule btn 2
+    btn2.addEventListener("click", function(){
+        remover();
+        btn1.ariaSelected = "false";
+        btn2.ariaSelected = "true";
+        tab1.classList.add("is-hidden");
+    });
 
 
 </script>

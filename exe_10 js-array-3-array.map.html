@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with array</h1>
+    <hr/>
+    <ul id="list">
+
+    </ul>
+    <script>
+        var countries = [
+  "Afghanistan",
+  "Bahrain",
+  "Bangladesh",
+  "Bhutan",
+  "Brunei",
+  "Cambodia",
+  "China",
+  "East Timor",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Israel",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Lebanon",
+  "Malaysia",
+  "Maldives",
+  "Mongolia",
+  "Myanmar",
+  "Nepal",
+  "North Korea",
+  "Oman",
+  "Pakistan",
+  "Palestine",
+  "Philippines",
+  "Qatar",
+  "Russia",
+  "Saudi Arabia",
+  "Singapore",
+  "South Korea",
+  "Sri Lanka",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Thailand",
+  "Turkey",
+  "Turkmenistan",
+  "United Arab Emirates",
+  "Uzbekistan",
+  "Vietnam",
+  "Yemen"
+];
+console.log(countries);
+
+var list = document.getElementById("list");
+
+countries.map(function(countries){
+    list.innerHTML += `<li>${countries}</li>`;
+})
+
+
+</script>
+</body>

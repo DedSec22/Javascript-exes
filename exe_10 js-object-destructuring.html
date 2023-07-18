@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with array</h1>
+    <hr/>
+    <table border="2" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Captain</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+    <script>
+    var teams = [
+    {
+        "name": "India",
+        "captain": "Rohit Sharma",
+    },
+    {
+        "name": "Australia",
+        "captain": "Pat Cummins",
+    },
+    {
+        "name": "England",
+        "captain": "Joe Root",
+    },
+    {
+        "name": "New Zealand",
+        "captain": "Kane Williamson",
+    },
+]
+
+var output = document.getElementById("output");
+    teams.map(function(team,i){
+
+    var {name:teamname, captain:captainname} = teams;
+    output.innerHTML += `<tr><td>${i+1}</td><td>${teamname}</td><td>${captainname}</td></tr>`;
+    })
+
+
+</script>
+</body>
+</html>

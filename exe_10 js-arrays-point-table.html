@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with array</h1>
+    <hr/>
+    <table border="2" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th colspan="2">Team Name</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+            
+
+        </tbody>
+    </table>
+    <script>
+    
+
+var teamsPoints =[
+    {
+        team: "ChennaiSuperKings",
+        points: 19,
+    },
+    {
+        team: "DelhiCapitals",
+        points: 20,
+    },
+    {
+        team: "KingsXIPunjab",
+        points: 15,
+    },
+    {
+        team: "KKR",
+        points: 19,
+    },
+    {
+        team: "MumbaiIndians",
+        points: 14,
+    },
+    {
+        team: "RajasthanRoyals",
+        points: 16,
+    },
+    {
+        team: "RCB",
+        points: 22,
+    },
+    {
+        team: "SunriseHyderabad",
+        points: 20,
+    }
+]
+var output = document.getElementById("output");
+var length = teamsPoints.length;
+    
+        teamsPoints.forEach(function (elements) {
+            let i = 0;
+            output.innerHTML += `<tr><td>${i+1}</td><td>${elements.team}</td><td>${elements.points}</td></tr>`;
+            i++;
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="output">
+
+    </h2>
+    
+    <script>
+        var output = document.getElementById("output");
+
+        class student
+        {
+            constructor(rollno, name, age)
+            {
+                this.rollno = rollno;
+                this.name = name;
+                this.age = age;
+            }
+            display()
+            {
+                output.innerHTML = `Roll no = ${this.rollno} <br/> Name = ${this.name} <br/> Age = ${this.age}`
+            }
+        }
+    
+        var s1 = new student(100, "Devdatt", 21);
+        // s1.display();
+        var display = s1.display.bind(s1);
+        display();
+    </script>
+</body>
+</html>
